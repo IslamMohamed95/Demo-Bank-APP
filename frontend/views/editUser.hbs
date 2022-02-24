@@ -1,0 +1,31 @@
+{{>header}}
+{{>nav}}
+    <section class="container my-3">
+    <form class="my-2 border border-2 border-primary p-3" method="post">
+        <div class="mb-3">
+            <input type="text" class="form-control" value="{{userData._id}}" readonly>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" placeholder="Sir Name" value="{{userData.name}}" readonly>
+        </div>
+        <div class="mb-3">
+            <input name="email" type="email" class="form-control" placeholder="Email" value="{{userData.email}}">
+        </div>
+        <div class="mb-3">
+            <label class="mb-3 form-label">Address: </label>
+            <div class="row">
+                <div class="mb-3"><input name="city" class="form-control" placeholder="City" value="{{userData.city}}"></div>
+                <div class="mb-3"><input name="street" class="form-control" placeholder="Street" value="{{userData.street}}"></div>
+                <div class="mb-3"><input name="building" class="form-control" placeholder="Building Number" value="{{userData.building}}"></div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" placeholder="Total Balance" value="{{userData.initBalance}}" readonly>
+        </div>
+        
+        <div class="mb-3">
+            <button class="btn btn-success">Edit</button>
+        </div>
+    </form>
+</section>
+{{>footer}}

@@ -1,0 +1,37 @@
+{{>header}}
+{{>nav}}
+    <section class="container my-3">
+        <div class="border rounded-3 p-4 m-3">
+            <h3 class="text-success my-3">A.Number: {{userData._id}}</h3>
+            <p class="fw-bolder mx-4">User-Name: {{userData.name}}</p>
+            <p class="fw-bolder mx-4">Address: {{userData.city}}, {{userData.street}}, {{userData.building}}</p>
+            <p class="fw-bolder text-danger mx-4">Initial Balance: {{userData.initBalance}}</p>
+        </div>
+
+
+
+        <table class="table table-bordered my-5">
+            <thead>
+                <tr>
+                    <th scope="col">Operation</th>
+                    <th scope="col">Amount</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {{#if opData}}
+                    <tr class="alert alert-danger text-center fw-bold">
+                        <td colspan="2">No Operations yet!</td>
+                    </tr>
+                {{else}}
+                    {{#each userData.transaction}}
+                        <tr>
+                            <td>{{this.opName}}</td>
+                            <td>{{this.Amount}}</td>
+                        </tr>
+                    {{/each}}
+                {{/if}}
+            </tbody>
+        </table>
+    </section>
+{{>footer}}

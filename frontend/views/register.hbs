@@ -1,0 +1,27 @@
+{{>header}}
+{{>nav}}
+    <section class="container my-4">
+        <form class="border border-primary p-3" method="post" required>
+            <div class="mb-3">
+                <input name="name" class="form-control" placeholder="Sir Name" required>
+            </div>
+            <div class="mb-3">
+                <input name="email" type="email" class="form-control" placeholder="Email-..." required >
+            </div>
+            <div class="mb-3">
+                <label class="mb-3 form-label">Address: </label>
+                <div class="row">
+                    <div class="mb-3"><input name="city" class="form-control" placeholder="City" required></div>
+                    <div class="mb-3"><input name="street" class="form-control" placeholder="Street" required></div>
+                    <div class="mb-3"><input name="building" class="form-control" placeholder="Building Number" required></div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <input name="initBalance" class="form-control" placeholder="Intial Balance" type="number" required>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary">Register</button>
+            </div>
+        </form>
+    </section>
+{{>footer}}

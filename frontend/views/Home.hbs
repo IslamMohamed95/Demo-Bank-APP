@@ -1,0 +1,38 @@
+{{>header}}
+{{>nav}}
+    <section class="container my-4">
+    <div class="mb-3"><a href="/deleteAll" class="btn btn-danger">Delete All</a></div>
+    <table class="table table-bordered">
+        <thead>
+            <tr class="fw-bolder bg-dark bg-gradient text-white">
+                <th>A.Number</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#if noData}}
+                <tr class="alert alert-danger text-center text-dark fw-bolder">
+                    <td colspan="4">No Data to Show</td>
+                </tr>
+            {{else}}
+                {{#each allUseres}}
+                    <tr>
+                        <td>{{this._id}}</td>
+                        <td>{{this.name}}</td>
+                        <td>{{this.email}}</td>
+                        <td>
+                            <a href="/showUser/{{this._id}}" class="mx-2 btn btn-primary">Show</a>
+                            <a href="/deleteUser/{{this._id}}" class="mx-2 btn btn-success">Delete</a>
+                            <a href="/editUser/{{this._id}}" class="mx-2 btn btn-danger">Edit</a>
+                            <a href="/addBalance/{{this._id}}" class="mx-2 btn btn-info">Add Balance</a>
+                            <a href="/withdraw/{{this._id}}" class="mx-2 btn btn-secondary">withdraw</a>
+                        </td>
+                    </tr>
+                {{/each}}
+            {{/if}}
+        </tbody>
+    </table>
+</section>
+{{>footer}}
